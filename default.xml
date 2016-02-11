@@ -5,16 +5,17 @@
   
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
-           review="android-review.googlesource.com" />
+           review="android-review.googlesource.com"
+           revision="refs/tags/android-6.0.1_r13" />
 
   <remote  name="omnirom"
            review="gerrit.omnirom.org"
            fetch="https://github.com/omnirom" />
 
-  <default revision="refs/tags/android-6.0.1_r1"
+  <default revision="refs/heads/android-6.0.1_r13"
            remote="aosp"
-           sync-j="4" 
-	   sync-c="true" />
+           sync-c="true"
+           sync-j="8" />
 
   <project path="build" name="android_build" remote="omnirom" revision="android-6.0" groups="pdk" >
     <copyfile src="core/root.mk" dest="Makefile" />
@@ -26,7 +27,7 @@
   <project path="device/common" name="device/common" />
   <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
   <project path="device/generic/common" name="device/generic/common" groups="pdk" />
-  <project path="device/generic/goldfish" name="CyanogenMod/android_device_generic_goldfish" remote="github" revision="cm-11.0" />
+  <project path="device/generic/goldfish" name="CyanogenMod/android_device_generic_goldfish" remote="github" revision="cm-13.0" />
   <project path="external/bison" name="platform/external/bison" groups="pdk" />
   <project path="external/blktrace" name="platform/external/blktrace" />
   <project path="external/bsdiff" name="platform/external/bsdiff" groups="pdk" />
